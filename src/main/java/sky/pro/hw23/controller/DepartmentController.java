@@ -20,15 +20,7 @@ public class DepartmentController {
     public DepartmentController(DepartmentService departmentService) {
         this.departmentService = departmentService;
     }
-    @GetMapping("/add")
-    public Employee addEmployee(@RequestParam("name") String name,@RequestParam("surname") String surname,
-                                @RequestParam("id") int id,@RequestParam("salary") int salary) {
-        if ((StringUtils.containsAny(name, '1','2', '3', '4', '5', '6', '7', '8', '9', '0'))||
-                ((StringUtils.containsAny(surname, '1','2', '3', '4', '5', '6', '7', '8', '9', '0')))) {
-            throw new EmployeeAlreadyAddedExeption();
-        }
-        return departmentService.addEmployee(StringUtils.capitalize(name),StringUtils.capitalize(surname), id,salary);
-    }
+
 
     @GetMapping("/all-by-dep")
     public List<Employee> getAllByDep(@RequestParam("id") int id) {

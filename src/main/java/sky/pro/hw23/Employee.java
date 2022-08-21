@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 public class Employee {
-    public int employeeDepartment;
+    public int employeeDepartmentId;
     public int employeeSalary;
     @JsonProperty("I")
     private String employeeName;
@@ -16,12 +16,12 @@ public class Employee {
         this.employeeName = employeeName;
     }
 
-    public int getEmployeeDepartment() {
-        return employeeDepartment;
+    public int getEmployeeDepartmentId() {
+        return employeeDepartmentId;
     }
 
-    public Employee(String employeeName, String employeeSurName, int employeeDepartment, int employeeSalary) {
-        this.employeeDepartment = employeeDepartment;
+    public Employee(String employeeName, String employeeSurName, int id, int employeeSalary) {
+        this.employeeDepartmentId = employeeDepartmentId;
         this.employeeSalary = employeeSalary;
         this.employeeName = employeeName;
         this.employeeSurName = employeeSurName;
@@ -29,7 +29,15 @@ public class Employee {
 
 
     public void setEmployeeDepartment(int employeeDepartment) {
-        this.employeeDepartment = employeeDepartment;
+        this.employeeDepartmentId = employeeDepartmentId;
+    }
+
+    public void setEmployeeSurName(String employeeSurName) {
+        this.employeeSurName = employeeSurName;
+    }
+
+    public String getEmployeeSurName() {
+        return employeeSurName;
     }
 
     public int getEmployeeSalary() {
